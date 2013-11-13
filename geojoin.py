@@ -99,8 +99,8 @@ if __name__ == "__main__":
 
     parser = OptionParser(usage='usage: %prog [options] csv json\n' """
     Merges data from a comma- (or tab-, pipe-, etc.) separated file into the
-    properties of GeoJSON features by joining on a foreign key, and prints the
-    resulting GeoJSON feature collection to stdout.""")
+    properties of GeoJSON (or TopoJSON) features by joining on a foreign key,
+    and prints the resulting feature collection to stdout.""")
     parser.add_option('-f', '--fk', dest='fk', default='id',
                       help='The CSV column and GeoJSON feature property name on '
                            'which to join. This may either be a single string, or '
