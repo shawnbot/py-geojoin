@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys, csv
 
 def get_key_limiter(props, key_prefix=None):
@@ -113,11 +114,10 @@ if __name__ == "__main__":
     parser.add_option('-m', '--mode', dest='mode', default="merge")
     parser.add_option('-p', '--props', dest='props', default='',
         help='a comma-separated list of keys to merge or replace')
-    parser.add_option('-i', '--indent', dest='indent', type='int', default=None,
-        help='The number of spaces with which to indent the output GeoJSON, '
-             'defaults to %default')
-    parser.add_option('-P', '--prefix', dest='key_prefix',
+    parser.add_option('--prefix', dest='key_prefix',
         help="The key prefix for merged or replaced keys")
+    parser.add_option('-P', '--pretty', dest='pretty', action="store_true",
+            help='Whether to pretty-print JSON (default: not pretty)')
     parser.add_option('--valid', dest='only_valid', action="store_true",
         help='Limit output to LIMIT features, useful for testing.')
 
@@ -154,5 +154,6 @@ if __name__ == "__main__":
     if options.only_valid:
         set_features(collection, features)
 
-    json.dump(collection, sys.stdout, indent=options.indent)
-
+    indent = (options.pretty and 2) or None
+    sep = (options.pretty and (', ', ': ')) or (',', ':')
+    json.dump(collection, sys.stdout, indent=indent, separators=sep)
