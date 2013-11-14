@@ -15,9 +15,9 @@ Or clone this repo and `[sudo] pip install .` from this directory. This should p
 ```
 Usage: geojoin [options] csv json
 
-    Merges data from a comma- (or tab-, pipe-, etc.) separated file into the
-    properties of GeoJSON (or TopoJSON) features by joining on a foreign key,
-    and prints the resulting feature collection to stdout.
+Merges data from a comma- (or tab-, pipe-, etc.) separated file into the
+properties of GeoJSON (or TopoJSON) features by joining on a foreign key,
+and prints the resulting feature collection to stdout.
 
 Options:
   -h, --help            show this help message and exit
@@ -26,14 +26,15 @@ Options:
                         a colon-separated pair denoting the CSV column name
                         and GeoJSON feature property name, respectively. The
                         default is "id".
-  -F FS, --field-separator=FS
-                        The CSV file field separator, default: ,
-  -q FQ, --field-quote=FQ
-                        The CSV file field quote character, default: "
   -m MODE, --mode=MODE  
   -p PROPS, --props=PROPS
                         a comma-separated list of keys to merge or replace
   --prefix=KEY_PREFIX   The key prefix for merged or replaced keys
   -P, --pretty          Whether to pretty-print JSON (default: not pretty)
-  --valid               Limit output to LIMIT features, useful for testing.
+  --inner               Limit features to only those with values in the CSV
+                        data.
+  -F FS, --field-separator=FS
+                        The CSV file field separator, default: ,
+  -q FQ, --field-quote=FQ
+                        The CSV file field quote character, default: "
 ```
