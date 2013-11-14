@@ -2,8 +2,18 @@
 
 Merge CSV data into GeoJSON features!
 
+To install via [pip](https://pypi.python.org/pypi/geojoin), just run:
+
+```sh
+$ [sudo] pip install geojoin
 ```
-Usage: geojoin.py [options] csv json
+
+Or clone this repo and `[sudo] pip install .` from this directory. This should put an executable, `geojoin` into your path.
+
+## Usage
+
+```
+Usage: geojoin [options] csv json
 
     Merges data from a comma- (or tab-, pipe-, etc.) separated file into the
     properties of GeoJSON (or TopoJSON) features by joining on a foreign key,
