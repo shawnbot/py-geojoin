@@ -1,6 +1,6 @@
 # import sys
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 
 def get_key_limiter(props, key_prefix=None):
     if props and len(props) > 0:
@@ -29,8 +29,6 @@ def get_prop_setter(mode, props, props_key="properties", fk="id", key_prefix=Non
     elif mode == "merge":
         def apply_props(row, feature):
             updates = limit_keys(row)
-            if updates.has_key(fk):
-                del updates[fk]
             feature[props_key].update(updates)
     else:
         raise Exeception("unrecognized mode: %s" % mode)
