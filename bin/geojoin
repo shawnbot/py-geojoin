@@ -57,7 +57,7 @@ valid_features = geojoin.join(
     key_prefix=options.key_prefix)
 
 # print >> sys.stderr, "%d features" % len(features)
-print >> sys.stderr, str(features[0]['properties'])
+# print >> sys.stderr, str(features[0]['properties'])
 
 if options.only_valid:
     geojoin.set_features(collection, features)
