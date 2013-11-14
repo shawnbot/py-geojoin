@@ -40,7 +40,8 @@ input_csv, input_json = args
 if ':' in options.fk:
     data_fk, feature_fk = options.fk.split(':')
 else:
-    data_fk = feature_fk = options.fk
+    data_fk = options.fk
+    feature_fk = options.fk
 
 csv_reader = csv.DictReader(open(input_csv), delimiter=options.fs, quotechar=options.fq)
 collection = json.load(open(input_json, 'r'))

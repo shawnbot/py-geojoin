@@ -1,6 +1,6 @@
 # import sys
 
-VERSION = "0.2.0"
+VERSION = "0.1.1"
 
 def get_key_limiter(props, key_prefix=None):
     if props and len(props) > 0:
