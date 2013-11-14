@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import sys, csv
 
+VERSION = "0.0.1"
+
 def get_key_limiter(props, key_prefix=None):
     print >> sys.stderr, "get_key_limiter(): %s, %s" % (props, key_prefix)
     if props and len(props) > 0:
