@@ -27,7 +27,7 @@ setup(name='geojoin',
           'json'
       ],
       scripts=[
-          'geojoin.py'
+          'bin/geojoin'
       ],
       download_url='https://github.com/shawnbot/py-geojoin/archive/v%s.tar.gz' % version,
       license='BSD')
